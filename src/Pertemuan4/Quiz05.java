@@ -35,10 +35,5 @@ public class Quiz05 {
         int tahun = totalLama / 360 - 1;
 
         System.out.println("Lama Student Exchange Anda adalah : " + tahun + " tahun " + bulan + " bulan " + tanggal + " hari ");
-
-       
-
-
     }
-    
 }
