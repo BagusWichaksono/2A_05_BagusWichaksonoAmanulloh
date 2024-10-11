@@ -2,9 +2,6 @@ package Pertemuan3;
 
 import java.util.Scanner;
 
-/**
- * P3_Tugas2
- */
 public class P3_Tugas2 {
 
     public static void main(String[] args) {

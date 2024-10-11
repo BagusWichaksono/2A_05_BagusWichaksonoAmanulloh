@@ -1,6 +1,7 @@
 package Pertemuan5;
 
 import java.util.Scanner;
+
 public class P5_Tugas2 {
     public static void main(String[] args) {
         Scanner input = new Scanner (System.in);

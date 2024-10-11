@@ -8,7 +8,7 @@ public class Tugas2 {
         int jenis, durasi, total = 0;
 
         while (true) {
-            System.out.println("Masukkan jenis kendaraan (1 Mobil, 2 Motor, 0 Keluar): ");
+            System.out.print("Masukkan jenis kendaraan (1 Mobil, 2 Motor, 0 Keluar): ");
             jenis = input.nextInt();
 
             if (jenis == 0) {
@@ -16,7 +16,7 @@ public class Tugas2 {
             }
 
             if (jenis == 1 || jenis == 2) {
-                System.out.println("Masukkan durasi parkir (jam): ");
+                System.out.print("Masukkan durasi parkir (jam): ");
                 durasi = input.nextInt();
 
                 if (durasi > 5) {

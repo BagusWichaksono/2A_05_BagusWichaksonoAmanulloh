@@ -1,6 +1,7 @@
 package Pertemuan5;
 
 import java.util.Scanner;
+
 public class PemilihanBilangan05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,13 +9,5 @@ public class PemilihanBilangan05 {
         int angka = sc.nextInt();
 
         System.out.print(angka % 2 == 0 ? "Angka " + angka + " termasuk bilangan genap" : "Angka " + angka + " termasuk bilangan ganjil");
-        /*if (angka % 2 == 0)
-        {
-            System.out.println("Angka " + angka + " termasuk bilangan genap");
-        }
-        else
-        {
-            System.out.println("Angka " + angka + " termasuk bilangan ganjil");
-        }*/
     }
 }

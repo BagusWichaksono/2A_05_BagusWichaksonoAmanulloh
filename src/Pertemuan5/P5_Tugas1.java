@@ -1,9 +1,7 @@
 package Pertemuan5;
 
 import java.util.Scanner;
-/**
- * P5_Tugas
- */
+
 public class P5_Tugas1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
