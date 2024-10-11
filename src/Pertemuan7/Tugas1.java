@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class Tugas1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int hargaTiket = 50000;
-        int totalTiketTerjual = 0;
+        int hargaTiket = 50000, totalTiketTerjual = 0, tiket;
         double totalPenjualan = 0;
-        int tiket;
 
         do {
             System.out.print("Masukkan jumlah tiket yang dibeli (ketik 0 untuk mengakhiri): ");
