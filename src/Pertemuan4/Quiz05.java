@@ -10,32 +10,33 @@ public class Quiz05 {
         System.out.println("=============== QUIZ 1 TI - 1G ===========");
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan tanggal berangkat: ");
-        int inputTanggalBerangkat = sc.nextInt();
+        int inputTanggalBerangkat05 = sc.nextInt();
         sc.nextLine();
         System.out.print("Masukkan bulan berangkat: ");
-        int inputBulanBerangkat = sc.nextInt();
+        int inputBulanBerangkat05 = sc.nextInt();
         sc.nextLine();
         System.out.print("Masukkan tahun berangkat: ");
-        int inputTahunBerangkat = sc.nextInt();
+        int inputTahunBerangkat05 = sc.nextInt();
         sc.nextLine();
-        System.out.println("Tanggal berangkat " + inputTanggalBerangkat + "-" + inputBulanBerangkat + "-" + inputTahunBerangkat);
+        System.out.println("Tanggal berangkat " + inputTanggalBerangkat05 + "-" + inputBulanBerangkat05 + "-" + inputTahunBerangkat05);
+
         System.out.println();
         System.out.print("Masukkan tanggal pulang: ");
-        int inputTanggalPulang = sc.nextInt();
+        int inputTanggalPulang05 = sc.nextInt();
         sc.nextLine();
         System.out.print("Masukkan bulan pulang: ");
-        int inputBulanPulang = sc.nextInt();
+        int inputBulanPulang05 = sc.nextInt();
         sc.nextLine();
         System.out.print("Masukkan tahun pulang: ");
-        int inputTahunPulang = sc.nextInt();
+        int inputTahunPulang05 = sc.nextInt();
         sc.nextLine();
-        System.out.println("Tanggal kepulangan " + inputTanggalPulang + "-" + inputBulanPulang + "-" + inputTahunPulang);
-        int totalLama = (30 - inputTanggalBerangkat + inputTanggalPulang) + ((12 - inputBulanBerangkat + inputBulanPulang) * 30) + ((inputTahunPulang - inputTahunBerangkat) * 360);
+        System.out.println("Tanggal kepulangan " + inputTanggalPulang05 + "-" + inputBulanPulang05 + "-" + inputTahunPulang05);
+        int totalLama = (30 - inputTanggalBerangkat05 + inputTanggalPulang05) + ((12 - inputBulanBerangkat05 + inputBulanPulang05) * 30) + ((inputTahunPulang05 - inputTahunBerangkat05) * 360);
 
-        int tanggal = ((totalLama % 360) % 30);
-        int bulan = ((totalLama % 360) / 30) - 1;
-        int tahun = totalLama / 360 - 1;
+        int tanggal05 = ((totalLama % 360) % 30);
+        int bulan05 = ((totalLama % 360) / 30) - 1;
+        int tahun05 = totalLama / 360 - 1;
 
-        System.out.println("Lama Student Exchange Anda adalah : " + tahun + " tahun " + bulan + " bulan " + tanggal + " hari ");
+        System.out.println("Lama Student Exchange Anda adalah : " + tahun05 + " tahun " + bulan05 + " bulan " + tanggal05 + " hari ");
     }
 }
