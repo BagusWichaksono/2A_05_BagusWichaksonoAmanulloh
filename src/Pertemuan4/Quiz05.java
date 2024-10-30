@@ -9,6 +9,7 @@ public class Quiz05 {
         System.out.println("Absen\t: 05");
         System.out.println("=============== QUIZ 1 TI - 1G ===========");
         Scanner sc = new Scanner(System.in);
+        
         System.out.print("Masukkan tanggal berangkat: ");
         int inputTanggalBerangkat05 = sc.nextInt();
         sc.nextLine();
