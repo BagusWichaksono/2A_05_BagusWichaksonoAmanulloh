@@ -19,6 +19,7 @@ public class RataNilai05 {
                 nilaiMahasiswa = sc.nextInt();
                 totalNilai+= nilaiMahasiswa;
             }
+            
             rataNilai = totalNilai / 5;
             System.out.println("Rata-rata Nilai Mahasiswa ke " + i + " adalah " + rataNilai);
             i++;
