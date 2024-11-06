@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Tugas1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Masukkan jumlah mahasiswa: ");
-        int jumlahMahasiswa = scanner.nextInt();
+        int jumlahMahasiswa = sc.nextInt();
         
         int[] nilai = new int[jumlahMahasiswa];
         int total = 0;
 
         for (int i = 0; i < jumlahMahasiswa; i++) {
             System.out.print("Masukkan nilai untuk mahasiswa " + (i + 1) + ": ");
-            nilai[i] = scanner.nextInt();
+            nilai[i] = sc.nextInt();
             total += nilai[i];
         }
 
