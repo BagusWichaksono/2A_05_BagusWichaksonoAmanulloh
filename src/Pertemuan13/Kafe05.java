@@ -3,6 +3,7 @@ package Pertemuan13;
 import java.util.Scanner;
 
 public class Kafe05 {
+
     public static int HitungTotalHarga05(int pilhanMenu, int banyakItem, String kodePromo) {
         int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
         int hargaTotal = hargaItems[pilhanMenu - 1] * banyakItem;
@@ -11,8 +12,6 @@ public class Kafe05 {
             hargaTotal = hargaTotal / 2;
         } else if (kodePromo.equals("DISKON30")) {
             hargaTotal = hargaTotal - (hargaTotal * 30 / 100);
-        } else {
-            System.out.println("Kode promo tidak valid. Tidak ada diskon yang diterapkan.");
         }
 
         return hargaTotal;
@@ -45,18 +44,34 @@ public class Kafe05 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int totalHargaKeseluruhan = 0;
 
-        Menu("Andi", true, "DISKON50");
-
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilhanMenu = sc.nextInt();
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
-        System.out.print("Masukkan kode promo: ");
+        System.out.print("Masukkan nama pelanggan: ");
+        String namaPelanggan = sc.nextLine();
+        System.out.print("Apakah Anda member? (true/false): ");
+        boolean isMember = sc.nextBoolean();
+        System.out.print("Masukkan kode promo (jika ada): ");
         String kodePromo = sc.next();
 
-        int totalHarga = HitungTotalHarga05(pilhanMenu, banyakItem, kodePromo);
+        Menu(namaPelanggan, isMember, kodePromo);
 
-        System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga);
+        boolean lanjutPesan = true;
+        while (lanjutPesan) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+            int pilhanMenu = sc.nextInt();
+            System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+            int banyakItem = sc.nextInt();
+
+            int totalHarga = HitungTotalHarga05(pilhanMenu, banyakItem, kodePromo);
+            totalHargaKeseluruhan += totalHarga;
+
+            System.out.println("Total harga untuk pesanan ini: Rp " + totalHarga);
+
+            System.out.print("Apakah Anda ingin memesan lagi? (true/false): ");
+            lanjutPesan = sc.nextBoolean();
+        }
+
+        System.out.println("\nTotal keseluruhan pesanan Anda: Rp " + totalHargaKeseluruhan);
+        System.out.println("Terima kasih telah memesan di Kafe05!");
     }
 }
