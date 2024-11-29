@@ -3,10 +3,18 @@ package Pertemuan13;
 import java.util.Scanner;
 
 public class Kafe05 {
-    public static int HitungTotalHarga05(int pilhanMenu, int banyakItem) {
+    public static int HitungTotalHarga05(int pilhanMenu, int banyakItem, String kodePromo) {
         int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
-
         int hargaTotal = hargaItems[pilhanMenu - 1] * banyakItem;
+
+        if (kodePromo.equals("DISKON50")) {
+            hargaTotal = hargaTotal / 2;
+        } else if (kodePromo.equals("DISKON30")) {
+            hargaTotal = hargaTotal - (hargaTotal * 30 / 100);
+        } else {
+            System.out.println("Kode promo tidak valid. Tidak ada diskon yang diterapkan.");
+        }
+
         return hargaTotal;
     }
 
@@ -33,20 +41,21 @@ public class Kafe05 {
         System.out.println("5. Roti Bakar - Rp 10,000");
         System.out.println("6. Mie Goreng - Rp 18,000");
         System.out.println("===========================");
-
-        System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Menu("Andi", true, "DISKON50");
+
         System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
         int pilhanMenu = sc.nextInt();
         System.out.print("Masukkan jumlah item yang ingin dipesan: ");
         int banyakItem = sc.nextInt();
+        System.out.print("Masukkan kode promo: ");
+        String kodePromo = sc.next();
 
-        int totalHarga = HitungTotalHarga05(pilhanMenu, banyakItem);
+        int totalHarga = HitungTotalHarga05(pilhanMenu, banyakItem, kodePromo);
 
         System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga);
     }
