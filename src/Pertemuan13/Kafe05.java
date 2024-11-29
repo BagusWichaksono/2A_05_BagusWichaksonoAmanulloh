@@ -1,6 +1,15 @@
 package Pertemuan13;
 
+import java.util.Scanner;
+
 public class Kafe05 {
+    public static int HitungTotalHarga05(int pilhanMenu, int banyakItem) {
+        int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
+
+        int hargaTotal = hargaItems[pilhanMenu - 1] * banyakItem;
+        return hargaTotal;
+    }
+
     public static void Menu(String namaPelanggan, boolean isMember, String kodePromo) {
         System.out.println("Selamat datang, " + namaPelanggan + "!");
 
@@ -15,7 +24,7 @@ public class Kafe05 {
         } else {
             System.out.println("Kode promo tidak valid.");
         }
-        
+
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Capuccino - Rp 20,000");
@@ -25,11 +34,20 @@ public class Kafe05 {
         System.out.println("6. Mie Goreng - Rp 18,000");
         System.out.println("===========================");
 
-
         System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         Menu("Andi", true, "DISKON50");
+        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+        int pilhanMenu = sc.nextInt();
+        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+        int banyakItem = sc.nextInt();
+
+        int totalHarga = HitungTotalHarga05(pilhanMenu, banyakItem);
+
+        System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga);
     }
 }
