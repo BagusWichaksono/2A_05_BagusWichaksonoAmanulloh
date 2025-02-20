@@ -36,7 +36,4 @@ public class Mahasiswa05 {
             return "Kinerja kurang";
         }
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-    }
 }
