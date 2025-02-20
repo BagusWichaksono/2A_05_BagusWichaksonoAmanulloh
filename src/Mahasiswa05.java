@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Mahasiswa05 {
         String nama;
         String nim;
@@ -18,10 +16,10 @@ public class Mahasiswa05 {
     }
 
     void tampilkanInformasi() {
-        System.out.println("Nama: " + nama);
-        System.out.println("NIM: " + nim);
-        System.out.println("IPK: " + ipk);
-        System.out.println("Kelas: " + kelas);
+        System.out.println("Nama    : " + nama);
+        System.out.println("NIM     : " + nim);
+        System.out.println("IPK     : " + ipk);
+        System.out.println("Kelas   : " + kelas);
     }
 
     void ubahKelas(String kelasBaru) {
