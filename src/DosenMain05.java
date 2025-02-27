@@ -1,7 +1,5 @@
 public class DosenMain05 {
     public static void main(String[] args) {
-        int tahunSekarang = 2025;
-
         Dosen05 ds1 = new Dosen05("204838339", "Bagus", true, 2020, "Bahasa Inggris");
         ds1.tampilInformasi();
         ds1.setStatusAktif(false);
