@@ -23,6 +23,7 @@ public class MahasiswaDemo05 {
             input.nextLine();
             System.out.print("Kelas : ");
             String kelas = input.nextLine();
+            System.out.println("---------------------------");
 
             Mahasiswa05 m = new Mahasiswa05(nama, nim, ipk, kelas);
             list.tambah(m);
@@ -30,9 +31,17 @@ public class MahasiswaDemo05 {
 
         System.out.println("\nData Mahasiswa sebelum sorting:");
         list.tampil();
-        System.out.println("----------------------------------------------------------");
+        System.out.println("--------------------------------------------------------");
         System.out.println("Data Mahasiswa setelah sorting berdasarkan IPK (DESC): ");
         list.bubbleSort();
+        list.tampil();
+
+        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC): ");
+        list.selectionSort();
+        list.tampil();
+
+        System.out.println("Data yang sudah terurut menggunakan INSERTION SORT (ASC): ");
+        list.insertionSort();
         list.tampil();
     }
 }
