@@ -1,23 +1,36 @@
 package Praktikum05;
 
+import java.util.Scanner;
+
 public class MahasiswaDemo05 {
     public static void main(String[] args) {
-        MahasiswaBerprestasi05 list = new MahasiswaBerprestasi05();
-        Mahasiswa05 m1 = new Mahasiswa05("123", "Zidan", "2A", 3.2);
-        Mahasiswa05 m2 = new Mahasiswa05("124", "Ayu", "2A", 3.5);
-        Mahasiswa05 m3 = new Mahasiswa05("125", "Sofi", "2A", 3.1);
-        Mahasiswa05 m4 = new Mahasiswa05("126", "Sita", "2A", 3.9);
-        Mahasiswa05 m5 = new Mahasiswa05("127", "Miki", "2A", 3.7);
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = input.nextInt();
+        input.nextLine();
+        
+        MahasiswaBerprestasi05 list = new MahasiswaBerprestasi05(jumlahMahasiswa);
 
-        list.tambah(m1);
-        list.tambah(m2);
-        list.tambah(m3);
-        list.tambah(m4);
-        list.tambah(m5);
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            System.out.println("Masukkan data mahasiswa ke-" + (i + 1) + ":");
+            System.out.print("Nama  : ");
+            String nama = input.nextLine();
+            System.out.print("NIM   : ");
+            String nim = input.nextLine();
+            System.out.print("IPK   : ");
+            double ipk = input.nextDouble();
+            input.nextLine();
+            System.out.print("Kelas : ");
+            String kelas = input.nextLine();
 
-        System.out.println("Data Mahasiswa sebelum sorting: ");
+            Mahasiswa05 m = new Mahasiswa05(nama, nim, ipk, kelas);
+            list.tambah(m);
+        }
+
+        System.out.println("\nData Mahasiswa sebelum sorting:");
         list.tampil();
-
+        System.out.println("----------------------------------------------------------");
         System.out.println("Data Mahasiswa setelah sorting berdasarkan IPK (DESC): ");
         list.bubbleSort();
         list.tampil();

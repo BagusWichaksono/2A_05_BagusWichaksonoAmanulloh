@@ -1,22 +1,26 @@
 package Praktikum05;
 
 public class MahasiswaBerprestasi05 {
-    Mahasiswa05 [] listMhs = new Mahasiswa05 [5];
+    Mahasiswa05[] listMhs;
     int idx;
+
+    MahasiswaBerprestasi05(int jumlah) {
+        listMhs = new Mahasiswa05[jumlah];
+        idx = 0;
+    }
 
     void tambah(Mahasiswa05 m) {
         if (idx < listMhs.length) {
-           listMhs[idx] = m;
-           idx++; 
+            listMhs[idx] = m;
+            idx++;
         } else {
-            System.out.println("data sudah penuh");
+            System.out.println("Data sudah penuh!");
         }
     }
 
     void tampil() {
-        for (Mahasiswa05 m:listMhs) {
+        for (Mahasiswa05 m : listMhs) {
             m.tampilInformasi();
-            System.out.println("------------------------------");
         }
     }
 
