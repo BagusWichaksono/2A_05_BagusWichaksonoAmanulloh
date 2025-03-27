@@ -42,31 +42,63 @@ public class DataDosen05 {
         System.out.println("\nData telah diurutkan (Usia Termuda ke Tertua).");
     }
 
-    void sortingDSC() {
-        for (int i = 0; i < idx - 1; i++) {
-            int maxIndex = i;
-            for (int j = i + 1; j < idx; j++) {
-                if (dataDosen[j].usia > dataDosen[maxIndex].usia) {
-                    maxIndex = j;
-                }
+    void PencarianDataSequential05(String cariNama) {
+        boolean ditemukan = false;
+        int jumlahDitemukan = 0;
+
+        System.out.println("\nHasil Pencarian Nama: " + cariNama);
+        for (int i = 0; i < idx; i++) {
+            if (dataDosen[i].nama.equalsIgnoreCase(cariNama)) {
+                dataDosen[i].tampil();
+                ditemukan = true;
+                jumlahDitemukan++;
             }
-            Dosen05 temp = dataDosen[maxIndex];
-            dataDosen[maxIndex] = dataDosen[i];
-            dataDosen[i] = temp;
         }
-        System.out.println("\nData telah diurutkan (Usia Tertua ke Termuda).");
+
+        if (!ditemukan) {
+            System.out.println("Data dosen dengan nama '" + cariNama + "' tidak ditemukan.");
+        } else if (jumlahDitemukan > 1) {
+            System.out.println("Peringatan: Ditemukan lebih dari satu dosen dengan nama '" + cariNama + "'.");
+        }
     }
 
-    void insertionSort() {
-        for (int i = 1; i < idx; i++) {
-            Dosen05 temp = dataDosen[i];
-            int j = i;
-            while (j > 0 && dataDosen[j - 1].usia < temp.usia) {
-                dataDosen[j] = dataDosen[j - 1];
-                j--;
+    void PencarianDataBinary05(int cariUsia) {
+        SortingASC();
+        int left = 0, right = idx - 1;
+        boolean ditemukan = false;
+        int jumlahDitemukan = 0;
+
+        System.out.println("\nHasil Pencarian Usia: " + cariUsia);
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (dataDosen[mid].usia == cariUsia) {
+                int i = mid;
+                while (i >= 0 && dataDosen[i].usia == cariUsia) {
+                    dataDosen[i].tampil();
+                    jumlahDitemukan++;
+                    i--;
+                }
+
+                i = mid + 1;
+                while (i < idx && dataDosen[i].usia == cariUsia) {
+                    dataDosen[i].tampil();
+                    jumlahDitemukan++;
+                    i++;
+                }
+
+                ditemukan = true;
+                break;
+            } else if (dataDosen[mid].usia > cariUsia) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
             }
-            dataDosen[j] = temp;
         }
-        System.out.println("\nData telah diurutkan (Usia Tertua ke Termuda - Insertion Sort).");
+
+        if (!ditemukan) {
+            System.out.println("Dosen dengan usia " + cariUsia + " tidak ditemukan.");
+        } else if (jumlahDitemukan > 1) {
+            System.out.println("Peringatan: Ditemukan lebih dari satu dosen dengan usia " + cariUsia + ".");
+        }
     }
 }

@@ -13,8 +13,8 @@ public class DosenMain05 {
             System.out.println("1. Tambah Data Dosen");
             System.out.println("2. Tampil Data Dosen");
             System.out.println("3. Sorting Usia ASC (Bubble Sort)");
-            System.out.println("4. Sorting Usia DSC (Selection Sort)");
-            System.out.println("5. Sorting Usia DSC (Insertion Sort)");
+            System.out.println("4. Pencarian Nama (Sequential Search)");
+            System.out.println("5. Pencarian Usia (Binary Search)");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = input.nextInt();
@@ -57,15 +57,17 @@ public class DosenMain05 {
                     break;
 
                 case 4:
-                    System.out.println("\n=== Data Dosen Setelah Sorting Usia DSC (Selection Sort) ===");
-                    data.sortingDSC();
-                    data.tampil();
+                    System.out.print("\nMasukkan Nama Dosen yang Dicari: ");
+                    String cariNama = input.nextLine();
+                    data.PencarianDataSequential05(cariNama);
                     break;
 
                 case 5:
-                    System.out.println("\n=== Data Dosen Setelah Sorting Usia DSC (Insertion Sort) ===");
-                    data.insertionSort();
-                    data.tampil();
+                    System.out.print("\nMasukkan Usia Dosen yang Dicari: ");
+                    int cariUsia = input.nextInt();
+                    input.nextLine();
+
+                    data.PencarianDataBinary05(cariUsia);
                     break;
 
                 case 0:
@@ -75,6 +77,6 @@ public class DosenMain05 {
                 default:
                     System.out.println("Pilihan tidak valid! Coba lagi.");
             }
-        } while (pilihan >= 1);
+        } while (pilihan != 0);
     }
 }
