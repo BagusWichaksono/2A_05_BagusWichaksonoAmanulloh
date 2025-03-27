@@ -36,21 +36,30 @@ public class MahasiswaBerprestasi05 {
     }
     
     int findBinarySearch(double cari, int left, int right) {
-        int mid;
         if (right >= left) {
-            mid = (left + right)/2;
-            if (cari == listMhs[mid].ipk) {
-                return (mid);
+            int mid = (left + right) / 2;
+    
+            if (listMhs[mid].ipk == cari) {
+                return mid;
             }
-            else if (listMhs[mid].ipk > cari) {
-                return findBinarySearch(cari, left, mid - 1);
-            }
-            else {
-                return findBinarySearch(cari, mid + 1, right);
+            
+            if (listMhs[0].ipk > listMhs[listMhs.length - 1].ipk) {
+                if (listMhs[mid].ipk < cari) {
+                    return findBinarySearch(cari, left, mid - 1);
+                } else {
+                    return findBinarySearch(cari, mid + 1, right);
+                }
+            }            else {
+                if (listMhs[mid].ipk > cari) {
+                    return findBinarySearch(cari, left, mid - 1);
+                } else {
+                    return findBinarySearch(cari, mid + 1, right);
+                }
             }
         }
         return -1;
     }
+    
 
     void tampilPosisi(double x, int pos) {
         if (pos!=-1) {
