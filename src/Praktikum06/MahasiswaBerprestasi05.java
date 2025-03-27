@@ -24,7 +24,6 @@ public class MahasiswaBerprestasi05 {
         }
     }
     
-
     int sequentialSearching(double cari) {
         int posisi = -1;
         for (int j = 0; j < listMhs.length; j++) {
@@ -34,6 +33,23 @@ public class MahasiswaBerprestasi05 {
             }
         }
         return posisi;
+    }
+    
+    int findBinarySearch(double cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right)/2;
+            if (cari == listMhs[mid].ipk) {
+                return (mid);
+            }
+            else if (listMhs[mid].ipk > cari) {
+                return findBinarySearch(cari, left, mid - 1);
+            }
+            else {
+                return findBinarySearch(cari, mid + 1, right);
+            }
+        }
+        return -1;
     }
 
     void tampilPosisi(double x, int pos) {
