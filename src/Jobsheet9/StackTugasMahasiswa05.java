@@ -2,7 +2,6 @@ package Jobsheet9;
 
 public class StackTugasMahasiswa05 {
     Mahasiswa05[] stack;
-
     int size;
     int top;
 
@@ -10,6 +9,20 @@ public class StackTugasMahasiswa05 {
         this.size = size;
         stack = new Mahasiswa05[size];
         top = -1; 
+    }
+    
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi05 stack = new StackKonversi05();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 
     public boolean isFull() {
@@ -56,20 +69,6 @@ public class StackTugasMahasiswa05 {
             return null;
         }
     }
-
-    public Mahasiswa05 bottom() {
-        if (!isEmpty()) {
-            return stack[0];
-        } else {
-            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
-            return null;
-        }
-    }
-
-    public int jumlahTugas() {
-        return top + 1;
-    }
-    
 
     public void print() {
         for (int i = top; i >= 0; i--) {
