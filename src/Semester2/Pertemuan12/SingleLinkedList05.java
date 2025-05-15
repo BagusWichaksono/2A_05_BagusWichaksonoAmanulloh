@@ -17,8 +17,6 @@ public class SingleLinkedList05 {
                 tmp = tmp.next;
             }
             System.out.println("");
-        } else {
-            System.out.println("Linked list kosong");
         }
     }
 

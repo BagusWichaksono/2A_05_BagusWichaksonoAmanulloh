@@ -6,15 +6,13 @@ public class Mahasiswa05 {
     String kelas;
     double ipk;
 
-    public Mahasiswa05() {
+    public Mahasiswa05() {}
 
-    }
-
-    public Mahasiswa05(String name, String nm, String kls, double ip) {
-        this.nama = name;
-        this.nim = nm;
-        this.kelas = kls;
-        this.ipk = ip;
+    public Mahasiswa05(String nama, String nim, String kelas, double ipk) {
+        this.nama = nama;
+        this.nim = nim;
+        this.kelas = kelas;
+        this.ipk = ipk;
     }
 
     void tampilInformasi() {
