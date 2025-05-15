@@ -1,7 +1,10 @@
 package Semester2.Pertemuan12;
 
+import java.util.Scanner;
+
 public class SLLMain05 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList05 sll = new SingleLinkedList05();
 
         Mahasiswa05 mhs1 = new Mahasiswa05("24212200", "Alvaro", "1A", 4.0);
@@ -18,6 +21,30 @@ public class SLLMain05 {
         sll.insertAt(2, mhs2);
         sll.print();
         
+        System.out.print("Berapa data yang ingin dimasukkan dari keyboard? ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Masukkan data ke-" + (i + 1));
+
+            System.out.print("NIM   : ");
+            String nim = sc.nextLine();
+            
+            System.out.print("Nama  : ");
+            String nama = sc.nextLine();
+            
+            System.out.print("Kelas : ");
+            String kelas = sc.nextLine();
+            
+            System.out.print("IPK   : ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
+
+            Mahasiswa05 mhs = new Mahasiswa05(nim, nama, kelas, ipk);
+            sll.addLast(mhs);
+            System.out.println("Data berhasil ditambahkan!");
+            sll.print();
+        }
     }
 }
-
