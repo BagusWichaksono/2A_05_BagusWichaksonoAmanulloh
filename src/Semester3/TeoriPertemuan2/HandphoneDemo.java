@@ -1,0 +1,13 @@
+package Semester3.TeoriPertemuan2;
+
+public class HandphoneDemo {
+    public static void main(String[] args) {
+        Handphone hp1 = new Handphone();
+
+        hp1.SetStatusAktif(1);       
+        hp1.SetStatusPanggilan(2);  
+        hp1.SetStatusSMS(1);        
+        hp1.TampilSemuaStatus();
+    }
+}
+
