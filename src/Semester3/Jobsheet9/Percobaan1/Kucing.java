@@ -1,4 +1,4 @@
-package Semester3.Jobsheet8;
+package Semester3.Jobsheet9.Percobaan1;
 
 public class Kucing extends Hewan {
     
